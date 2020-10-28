@@ -117,7 +117,7 @@ class OTXv2(object):
             # This will allow 5 tries at a url, with an increasing backoff.  Only applies to a specific set of codes
             self.request_session.mount('https://', HTTPAdapter(
                 max_retries=Retry(
-                    total=5,
+                    total=20,
                     status_forcelist=[429, 500, 502, 503, 504],
                     backoff_factor=1,
                 )
